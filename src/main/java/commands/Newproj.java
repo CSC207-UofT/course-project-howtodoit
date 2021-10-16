@@ -21,7 +21,7 @@ public class Newproj implements Executable {
         // User argument is a new project name
         String name = args[0];
         // Create a new project
-        todoSystem.addProjects(name);
+        todoSystem.addProject(name);
 
         return "Project " + name + " created successfully.";
     }

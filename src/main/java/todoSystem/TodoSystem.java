@@ -20,11 +20,18 @@ public class TodoSystem implements Serializable {
         return this.tasks;
     }
 
+    public void addTask(String name, String duedate, String description, Project project){
+        this.tasks.put(name, new Task(name, duedate, description, project));
+    }
+
+    public void delTask(String name){
+        this.tasks.remove(name);}
+
     public HashMap<String, Project> getProjects() {
         return this.projects;
     }
 
-    public void addProjects(String name) {this.projects.put(name,
+    public void addProject(String name) {this.projects.put(name,
             new Project(name, true));}
 
     public void delProjects(String name) {this.projects.remove(name);}

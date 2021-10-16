@@ -12,7 +12,7 @@ public class Commands {
      */
     public static void loadCommands() {
         COMMANDS.put("newtask", new NewTask());
-        COMMANDS.put("rename", new NewTask());
+        COMMANDS.put("rename", new Rename());
         COMMANDS.put("reproj", new Reproj());
         COMMANDS.put("retime", new Retime());
         COMMANDS.put("redesc", new Redesc());
