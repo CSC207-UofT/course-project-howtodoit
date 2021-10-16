@@ -2,6 +2,8 @@ package commands;
 
 import driver.DataAccessor;
 import todoSystem.TodoSystem;
+import todoSystem.Label;
+import todoSystem.Task;
 
 public class TaskLabAdd implements Executable {
 
@@ -10,9 +12,14 @@ public class TaskLabAdd implements Executable {
         TodoSystem todoSystem = dataAccessor.getSystem(); // Get access to entities
         // checkArgs(todoSystem, args); // Check whether arguments are valid
 
-        String label = args[0];
-        todoSystem.addLab(label);
+        String t = args[0];
+        String l = args[1];
 
-        return "Label " + label + "has been added successfully.";
+        Task task = todoSystem.getTasks().get(t);
+        Label label = todoSystem.getLabels().get(l);
+        label.addTask(task);
+
+
+        return "Task " + t + "has been removed from " + l + "successfully.";
     }
 }
