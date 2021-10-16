@@ -24,7 +24,16 @@ public class TodoSystem implements Serializable {
         return this.projects;
     }
 
+    public void addProjects(String name) {this.projects.put(name,
+            new Project(name, true));}
+
+    public void delProjects(String name) {this.projects.remove(name);}
+
     public HashMap<String, Label> getLabels() {
         return this.labels;
     }
+
+    public void addLab(String name) {this.labels.put(name, new Label(name, true));}
+
+    public void delLab(String name) {this.labels.remove(name);}
 }
