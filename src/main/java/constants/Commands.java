@@ -19,6 +19,15 @@ public class Commands {
         COMMANDS.put("tasklabadd", new TaskLabAdd());
         COMMANDS.put("tasklabdel", new TaskLabDel());
         COMMANDS.put("newproj", new Newproj());
+        COMMANDS.put("modproj", new Modproj());
+        COMMANDS.put("delproj", new Delproj());
+        COMMANDS.put("viewproj", new Viewproj());
+        COMMANDS.put("listproj", new Listproj());
+        COMMANDS.put("newlab", new Newlab());
+        COMMANDS.put("modlab", new Modlab());
+        COMMANDS.put("dellab", new Dellab());
+        COMMANDS.put("viewlab", new Viewlab());
+        COMMANDS.put("listlab", new Listlab());
         // TODO: add more commands and create those classes!
 
 

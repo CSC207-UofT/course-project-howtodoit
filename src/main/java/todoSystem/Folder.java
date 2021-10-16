@@ -32,6 +32,14 @@ public class Folder implements Serializable {
         this.tasks.remove(task.getName());
     }
 
+    public int getLength(){return this.tasks.size();}
+
+    public void merge(HashMap<String, Task> map){this.tasks.putAll(map);}
+
+    public HashMap<String, Task> getAll(){return this.tasks;}
+
+    public HashMap<String, Task> getTasks(){return this.tasks;}
+
     public List<Task> viewTasks() {
         return new ArrayList<>(tasks.values()); // TODO: sort the list in chronological order, maybe use iterator
     }
