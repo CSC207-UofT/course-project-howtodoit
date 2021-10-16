@@ -16,19 +16,22 @@ public class Commands {
         COMMANDS.put("reproj", new Reproj());
         COMMANDS.put("retime", new Retime());
         COMMANDS.put("redesc", new Redesc());
+        COMMANDS.put("star", new StarTask());
         COMMANDS.put("tasklabadd", new TaskLabAdd());
         COMMANDS.put("tasklabdel", new TaskLabDel());
-        COMMANDS.put("newproj", new Newproj());
-        COMMANDS.put("modproj", new Modproj());
-        COMMANDS.put("delproj", new Delproj());
-        COMMANDS.put("viewproj", new Viewproj());
-        COMMANDS.put("listproj", new Listproj());
-        COMMANDS.put("newlab", new Newlab());
-        COMMANDS.put("modlab", new Modlab());
-        COMMANDS.put("dellab", new Dellab());
-        COMMANDS.put("viewlab", new Viewlab());
-        COMMANDS.put("listlab", new Listlab());
-        // TODO: add more commands and create those classes!
+      
+        COMMANDS.put("newproj", new NewProj());
+        COMMANDS.put("modproj", new ModProj());
+        COMMANDS.put("delproj", new DelProj());
+        COMMANDS.put("viewproj", new ViewProj());
+        COMMANDS.put("lsprojs", new ListProj());
+      
+        COMMANDS.put("newlab", new NewLab());
+        COMMANDS.put("modlab", new ModLab());
+        COMMANDS.put("dellab", new DelLab());
+        COMMANDS.put("viewlab", new ViewLab());
+        COMMANDS.put("lslabs", new ListLab());
+
 
 
     }

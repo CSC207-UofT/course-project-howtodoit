@@ -24,6 +24,6 @@ public class Retime implements Executable {
         Task task = todoSystem.getTasks().get(name);
         task.setDueDate(newtime);
 
-        return "Task " + name + "due date updated successfully.";
+        return "Task " + name + " due date updated successfully.";
     }
 }
