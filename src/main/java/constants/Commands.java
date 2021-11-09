@@ -3,12 +3,14 @@ package constants;
 import commands.*;
 
 import java.util.HashMap;
+import java.util.TreeSet;
 
 /**
  * This class stores and initializes all Executable objects.
  */
 public class Commands {
     public static final HashMap<String, Executable> COMMANDS = new HashMap<>();
+    public static final TreeSet<String> NON_MUTATING_COMMANDS= new TreeSet<>();
 
     /**
      * This class loads all commands.
@@ -23,8 +25,6 @@ public class Commands {
         COMMANDS.put("retime", new Retime());
         COMMANDS.put("redesc", new Redesc());
         COMMANDS.put("reproj", new Reproj());
-        COMMANDS.put("addtasklab", new AddTaskLab());
-        COMMANDS.put("deltasklab", new DelTaskLab());
 
 
         COMMANDS.put("newproj", new NewProj());
@@ -33,12 +33,17 @@ public class Commands {
         COMMANDS.put("viewproj", new ViewProj());
         COMMANDS.put("listproj", new ListProj());
 
-        COMMANDS.put("newlab", new NewLab());
-        COMMANDS.put("modlab", new ModLab());
-        COMMANDS.put("dellab", new DelLab());
-        COMMANDS.put("viewlab", new ViewLab());
-        COMMANDS.put("listlab", new ListLab());
+        COMMANDS.put("regret", new Regret());
 
+        populateNonMutatingCommands();
+    }
 
+    private static void populateNonMutatingCommands() {
+        NON_MUTATING_COMMANDS.add("upcoming");
+        NON_MUTATING_COMMANDS.add("viewproj");
+        NON_MUTATING_COMMANDS.add("listproj");
+        NON_MUTATING_COMMANDS.add("viewlab");
+        NON_MUTATING_COMMANDS.add("listlab");
+        NON_MUTATING_COMMANDS.add("regret");
     }
 }

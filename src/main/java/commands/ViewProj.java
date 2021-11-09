@@ -1,13 +1,13 @@
 package commands;
 
 import driver.DataAccessor;
-import helpers.ChronologicalSort;
-import todoSystem.Project;
+import todoSystem.Folder;
 import todoSystem.Task;
 import todoSystem.TodoSystem;
 
 import java.util.HashMap;
 import java.util.List;
+import helpers.ChronologicalSort;
 
 /**
  * This class renames a project.
@@ -22,13 +22,20 @@ public class ViewProj implements Executable{
      */
     @Override
     public String execute(DataAccessor dataAccessor, String[] args) {
-        TodoSystem todoSystem = dataAccessor.getSystem();
-        Project project = todoSystem.getProjects().get(args[0]);
-        HashMap<String, Task> map= project.getTasks();
-        List<Task> list_to_return = ChronologicalSort.tasks_in_ch_order(map);
-        for (Task t: list_to_return) {
-            System.out.println(t.getName());
+        TodoSystem todoSystem = dataAccessor.getSystem(); // Get access to entities
+        // checkArgs(todoSystem, args); // Check whether arguments are valid
+
+        // Map user arguments to project name
+        String name = args[0];
+
+        Folder project = todoSystem.getProjects().get(name);
+        HashMap<String, Task> tasks = project.getTasks(); // Get all tasks from this project
+        List<Task> sortedTasks = ChronologicalSort.tasks_in_ch_order(tasks); // Sort them
+        StringBuilder output = new StringBuilder("This project <" + name + "> contains the following tasks:\n");
+        for (Task task: sortedTasks) {
+            output.append(task.toString()).append('\n'); // Each line will be a task
         }
-        return "All tasks in "+args[0]+" has been printed.";
+
+        return output.toString();
     }
 }
